@@ -1,0 +1,17 @@
+{
+  "name": "session_continuity",
+  "short_display_name": "Session Continuity",
+  "description": "Chat-scoped session continuity: auto-captures each exchange, prompts summary compression at a turn threshold, manual retrieval via session_status, manual commit to knowledge via session_commit. Never touches core memory. Not privacy-aware by design — silent in private chats.",
+  "version": "1.0.0",
+  "author": "Anam",
+  "emoji": "🧵",
+  "priority": 170,
+  "capabilities": {
+    "hooks": {
+      "post_chat": "hooks/post_chat.py",
+      "ghost_inject": "hooks/ghost_inject.py",
+      "chat_cleared": "hooks/chat_cleared.py"
+    },
+    "tools": "tools/session_continuity_tools.py"
+  }
+}
